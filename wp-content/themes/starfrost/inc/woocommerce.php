@@ -165,7 +165,7 @@ function starfrost_breadcrumb_defaults( $defaults ) {
 add_filter( 'woocommerce_breadcrumb_defaults', 'starfrost_breadcrumb_defaults' );
 
 /**
- * Make the "add to cart" button text quietly more brand-appropriate.
+ * Override the default "add to cart" button text with brand copy.
  *
  * @return string
  */

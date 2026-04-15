@@ -1,6 +1,6 @@
 # Starfrost
 
-The website for **Starfrost** — a small company shipping 3&nbsp;mL and 10&nbsp;mL products under the Starfrost name.
+The website for **Starfrost** — Bacteriostatic Water, in 3&nbsp;mL and 10&nbsp;mL. **Pure. Clean. Quality.**
 
 > Live site / preview: **https://nors3ai.github.io/Water-Company/**
 
@@ -48,12 +48,12 @@ Water-Company/
 
 ## The product line
 
-Starfrost ships in two sizes to start:
+Starfrost ships **Bacteriostatic Water** in two sizes to start:
 
 - **3 mL** — the smaller pour
 - **10 mL** — the everyday size
 
-That's the line. We'd rather get two SKUs right than ship a catalog.
+Two SKUs. One standard. **Pure. Clean. Quality.**
 
 ---
 
@@ -74,7 +74,7 @@ That's the setup. The theme bootstraps everything else from `functions.php` and 
 
 ## Look and feel
 
-Starfrost is dark-first and quiet.
+Starfrost is dark-first and minimal.
 
 - **Background**: pure black `#000000` with a faint radial wash so it doesn't feel flat.
 - **Accent**: ice-cyan `#a5f3fc` and a softer glacier glow `#7dd3fc`. Two colors do the work.
@@ -115,4 +115,4 @@ The username portion of a GitHub Pages URL (`nors3ai`) is served lowercase regar
 
 ## Disclaimer
 
-Starfrost products are intended for laboratory and research use. Nothing in this repository or on the storefront is medical advice.
+Starfrost Bacteriostatic Water is intended for laboratory and research use. Nothing in this repository or on the storefront is medical advice.

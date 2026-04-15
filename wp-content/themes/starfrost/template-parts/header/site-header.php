@@ -12,7 +12,7 @@
 defined( 'ABSPATH' ) || exit;
 
 $show_topbar    = (bool) get_theme_mod( 'starfrost_show_topbar', true );
-$topbar_message = get_theme_mod( 'starfrost_topbar_message', __( 'Sterile. Lab grade. Quietly made.', 'starfrost' ) );
+$topbar_message = get_theme_mod( 'starfrost_topbar_message', __( 'Bacteriostatic Water. Pure. Clean. Quality.', 'starfrost' ) );
 ?>
 
 <?php if ( $show_topbar && ! empty( $topbar_message ) ) : ?>

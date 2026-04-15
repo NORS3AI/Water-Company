@@ -276,7 +276,7 @@ hr {
 	z-index: var(--sf-z-toast);
 }
 
-/* Scrollbar — quiet but visible against the void. */
+/* Scrollbar — minimal but visible against the void. */
 @supports (scrollbar-width: thin) {
 	* {
 		scrollbar-width: thin;

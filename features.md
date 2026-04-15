@@ -8,10 +8,12 @@ A short list of what the Starfrost website supports today. This is not a marketi
 
 ## Product line
 
+Starfrost ships **Bacteriostatic Water** in two sizes:
+
 - **3 mL** — the smaller pour
 - **10 mL** — the everyday size
 
-That's the line for launch. Two SKUs.
+Two SKUs at launch. **Pure. Clean. Quality.**
 
 ---
 

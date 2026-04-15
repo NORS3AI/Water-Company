@@ -4,7 +4,7 @@ Guidance for Claude (and Claude Code) when working inside this repository.
 
 ## What this repo is
 
-This is the **Starfrost** company website — a small operation shipping **3&nbsp;mL** and **10&nbsp;mL** products under the Starfrost name. We are not selling the theme; we are selling Starfrost. Keep that framing in everything you write.
+This is the **Starfrost** company website. Starfrost sells **Bacteriostatic Water** in two sizes — **3&nbsp;mL** and **10&nbsp;mL**. The brand voice is three words: **Pure. Clean. Quality.** We are not selling the theme; we are selling Starfrost. Keep that framing in everything you write.
 
 The "space" in the design language means **void, frost, dark, sleek, pure** — never planets, shuttles, aliens, or cosmic clutter.
 
@@ -55,8 +55,9 @@ CLAUDE.md                       ← (this file)
 
 The site is for **a company**, not a theme. When you write copy, default text, or commit messages, write like Starfrost is the product. Don't brag about the theme. Don't list theme features in user-facing copy.
 
-- **Lead with the product.** Two sizes — 3 mL and 10 mL. That's the line.
-- **Be quiet.** Short sentences. No marketing fluff. No exclamation points.
+- **Lead with what we sell.** Bacteriostatic Water, in two sizes — 3 mL and 10 mL. That's the line.
+- **The brand voice is three words.** *Pure. Clean. Quality.* Use it as the descriptor pattern. Don't soften it.
+- **Be tight.** Short sentences. No marketing fluff. No exclamation points. No "quietly", no "made carefully", no humble-brag voice.
 - **No clichés.** No rocket emojis, no planet illustrations, no astrology iconography, no "to the moon" language. Starfrost reads as a clinical, modern operation that happens to feel like deep space.
 - **No theme talk in the public landing.** `docs/index.html` is the company website — it should read like a company website, not a theme demo.
 
@@ -100,7 +101,7 @@ The site is for **a company**, not a theme. When you write copy, default text, o
 - Keep PHP, CSS, JS modular. One concern per file.
 - Use `sf-` / `starfrost_` / `STARFROST_` prefixes.
 - Re-use design tokens.
-- Write copy that sounds like a small careful company.
+- Write copy that sounds like a clinical, modern company that sells one thing well.
 
 **Don't**
 

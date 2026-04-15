@@ -87,7 +87,7 @@ function starfrost_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'starfrost_topbar_message',
 		array(
-			'default'           => __( 'Sterile. Lab grade. Quietly made.', 'starfrost' ),
+			'default'           => __( 'Bacteriostatic Water. Pure. Clean. Quality.', 'starfrost' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'postMessage',
 		)
@@ -131,7 +131,7 @@ function starfrost_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'starfrost_footer_tagline',
 		array(
-			'default'           => __( 'Made quietly. Built to last.', 'starfrost' ),
+			'default'           => __( 'Bacteriostatic Water. Pure. Clean. Quality.', 'starfrost' ),
 			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
