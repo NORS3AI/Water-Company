@@ -28,8 +28,13 @@ function glacix_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'glacix_brand',
 		array(
-			'title'    => __( 'Glacix: Brand', 'glacix' ),
-			'priority' => 30,
+			'title'       => __( 'Glacix: Brand', 'glacix' ),
+			'description' => sprintf(
+				/* translators: %s: link to Site Identity section */
+				__( 'Looking to upload your company logo? It lives in %s. Drop in a PNG or SVG and it will replace the wordmark in the header automatically.', 'glacix' ),
+				'<a href="javascript:wp.customize.section( \'title_tagline\' ).focus();">' . esc_html__( 'Site Identity → Site Logo', 'glacix' ) . '</a>'
+			),
+			'priority'    => 30,
 		)
 	);
 

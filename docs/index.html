@@ -30,7 +30,7 @@
 
 <header class="site-header">
 	<div class="container site-header__inner">
-		<a href="#" class="brand" aria-label="Glacix home">
+		<a href="#" class="brand" data-brand aria-label="Glacix home">
 			<span class="brand__mark" aria-hidden="true">
 				<svg viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 					<path d="M16 2 L16 30 M2 16 L30 16 M6 6 L26 26 M26 6 L6 26"></path>
@@ -132,31 +132,29 @@
 		</div>
 
 		<div class="specs">
-
 			<article class="spec">
-				<span class="spec__eyebrow">Bacteriostatic agent</span>
-				<div class="spec__value">0.9<span class="spec__unit">% w/v</span></div>
+				<div class="spec__value">0.9<span class="spec__unit">%</span></div>
+				<div class="spec__divider" aria-hidden="true"></div>
 				<h3 class="spec__name">Benzyl Alcohol</h3>
 				<p class="spec__formula">C<sub>6</sub>H<sub>5</sub>CH<sub>2</sub>OH</p>
-				<p class="spec__note">Inhibits bacterial growth in multi-dose use.</p>
+				<p class="spec__role">Bacteriostatic agent</p>
 			</article>
 
 			<article class="spec">
-				<span class="spec__eyebrow">Diluent</span>
-				<div class="spec__value">99.1<span class="spec__unit">% w/v</span></div>
+				<div class="spec__value">99.1<span class="spec__unit">%</span></div>
+				<div class="spec__divider" aria-hidden="true"></div>
 				<h3 class="spec__name">Sterile Water for Injection</h3>
-				<p class="spec__formula">H<sub>2</sub>O · USP</p>
-				<p class="spec__note">Pharmaceutical-grade water, filtered and sterilized.</p>
+				<p class="spec__formula">H<sub>2</sub>O &nbsp;·&nbsp; USP</p>
+				<p class="spec__role">Diluent</p>
 			</article>
 
 			<article class="spec">
-				<span class="spec__eyebrow">Solution</span>
-				<div class="spec__value">5.0<span class="spec__unit"> pH</span></div>
+				<div class="spec__value">5.0<span class="spec__unit">pH</span></div>
+				<div class="spec__divider" aria-hidden="true"></div>
 				<h3 class="spec__name">Acidity</h3>
 				<p class="spec__formula">Range 4.5 – 7.0</p>
-				<p class="spec__note">Within USP specification for bacteriostatic water.</p>
+				<p class="spec__role">USP specification</p>
 			</article>
-
 		</div>
 
 		<dl class="specs-meta">
@@ -225,6 +223,30 @@
 
 <script>
 	document.getElementById('year').textContent = new Date().getFullYear();
+
+	/* Auto-load a logo from /docs/img/ if one is present.
+	   Tries svg, png, jpg, jpeg in order. Falls back to the wordmark. */
+	(function () {
+		var brand = document.querySelector('[data-brand]');
+		if (!brand) return;
+		var exts = ['svg', 'png', 'jpg', 'jpeg'];
+		var i = 0;
+		function tryNext() {
+			if (i >= exts.length) return; // give up; keep the wordmark
+			var probe = new Image();
+			probe.onload = function () {
+				var img = document.createElement('img');
+				img.src = 'img/logo.' + exts[i];
+				img.alt = 'Glacix';
+				img.className = 'brand__img';
+				brand.innerHTML = '';
+				brand.appendChild(img);
+			};
+			probe.onerror = function () { i++; tryNext(); };
+			probe.src = 'img/logo.' + exts[i];
+		}
+		tryNext();
+	})();
 </script>
 </body>
 </html>
