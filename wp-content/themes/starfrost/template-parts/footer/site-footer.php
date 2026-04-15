@@ -8,7 +8,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-$tagline = get_theme_mod( 'starfrost_footer_tagline', __( 'Bacteriostatic Water — sourced and stored under stringent conditions.', 'starfrost' ) );
+$tagline = get_theme_mod( 'starfrost_footer_tagline', __( 'Made quietly. Built to last.', 'starfrost' ) );
 $legal   = get_theme_mod( 'starfrost_footer_legal', __( 'For laboratory and research use. Not intended as a substitute for professional medical advice.', 'starfrost' ) );
 ?>
 <footer id="colophon" class="sf-footer" role="contentinfo">

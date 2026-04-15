@@ -1,175 +1,118 @@
 # Starfrost
 
-A WooCommerce theme for **Starfrost** — a Bacteriostatic Water company. Pure void canvas, frost-blue accents, modern and sleek.
+The website for **Starfrost** — a small company shipping 3&nbsp;mL and 10&nbsp;mL products under the Starfrost name.
 
-> Live preview / docs: **https://nors3ai.github.io/Water-Company/**
+> Live site / preview: **https://nors3ai.github.io/Water-Company/**
 
-Starfrost is a WordPress theme built specifically for selling Bacteriostatic Water (Bac Water). It is designed to feel modern, clinical, and uncluttered — like staring into deep, quiet space — while staying friendly to merchants who build pages with **Elementor** on top of **WooCommerce**.
+This repository holds two things:
 
-The project name **Starfrost** is the working company name (still pending). The product focus is exclusively Bacteriostatic Water — Starfrost is **not** a peptides company.
+1. **`docs/`** — the public-facing landing page for Starfrost, hosted on GitHub Pages.
+2. **`wp-content/themes/starfrost/`** — the WordPress + WooCommerce theme that powers the production storefront.
 
----
-
-## Quick facts
-
-| | |
-|---|---|
-| **Theme name** | Starfrost |
-| **Theme location** | `wp-content/themes/starfrost/` |
-| **Built for** | WordPress 6.2+, WooCommerce, Elementor (optional) |
-| **PHP** | 7.4+ |
-| **Aesthetic** | Void, frost, sleek, modern. Dark-first. |
-| **Live demo / docs** | https://nors3ai.github.io/Water-Company/ |
-| **License** | GPL-2.0-or-later |
+The codebase exists to run the company website. We aren't selling the theme — we're selling Starfrost.
 
 ---
 
-## Installation
-
-1. Copy `wp-content/themes/starfrost/` into your WordPress install's `wp-content/themes/` directory (or symlink it during development).
-2. In WordPress admin, go to **Appearance → Themes** and activate **Starfrost**.
-3. Install and activate **WooCommerce**. Starfrost will pick it up automatically.
-4. (Optional but recommended) install **Elementor** to compose pages with Starfrost-styled widgets.
-5. Visit **Appearance → Customize → Starfrost: Brand / Header / Footer** to set brand color, top-bar message, and footer copy.
-
-That's the full setup. The theme bootstraps everything else from `functions.php` and the `inc/` modules.
-
----
-
-## Project layout
+## What's in here
 
 ```
 Water-Company/
-├── wp-content/
-│   └── themes/
-│       └── starfrost/          ← the theme itself
-│           ├── style.css       ← theme metadata (required by WordPress)
-│           ├── functions.php   ← bootstrap; loads inc/*
-│           ├── index.php       ← fallback template
-│           ├── header.php      ← document head + opening shell
-│           ├── footer.php      ← closing shell
-│           ├── page.php        ← single page template
-│           ├── single.php      ← single post template
-│           ├── archive.php     ← archive fallback
-│           ├── search.php      ← search results
-│           ├── 404.php         ← "lost in the void" page
-│           ├── searchform.php  ← reusable search form
-│           ├── comments.php    ← comments template
-│           ├── inc/            ← modular concerns
-│           │   ├── setup.php
-│           │   ├── enqueue.php
-│           │   ├── template-tags.php
-│           │   ├── template-functions.php
-│           │   ├── customizer.php
-│           │   ├── woocommerce.php
-│           │   └── elementor.php
-│           ├── template-parts/ ← composable html chunks
-│           │   ├── header/
-│           │   ├── footer/
-│           │   └── content/
-│           ├── woocommerce/    ← Woo template overrides
-│           │   ├── archive-product.php
-│           │   ├── content-product.php
-│           │   ├── cart/mini-cart.php
-│           │   └── global/wrapper-(start|end).php
-│           └── assets/
-│               ├── css/        ← tokens, base, layout, components, woocommerce, elementor, utilities, editor
-│               ├── js/         ← app.js (nav, drawers, sticky header)
-│               └── svg, fonts, images
-├── docs/                       ← GitHub Pages source (served from branch:main /docs)
-│   └── index.html              ← public landing page
-├── CLAUDE.md                   ← guidance for Claude / Claude Code in this repo
-├── features.md                 ← feature inventory + roadmap
-└── README.md                   ← you are here
+├── docs/                          ← public landing (GitHub Pages source)
+│   ├── index.html
+│   ├── assets/landing.css
+│   └── README.md
+├── wp-content/themes/starfrost/   ← the storefront theme
+│   ├── style.css                  ← theme metadata
+│   ├── functions.php              ← bootstrap; loads inc/*
+│   ├── header.php / footer.php / page.php / single.php / index.php
+│   ├── archive.php / search.php / 404.php / searchform.php / comments.php
+│   ├── inc/                       ← one module per concern
+│   │   ├── setup.php
+│   │   ├── enqueue.php
+│   │   ├── template-tags.php
+│   │   ├── template-functions.php
+│   │   ├── customizer.php
+│   │   ├── woocommerce.php
+│   │   └── elementor.php
+│   ├── template-parts/            ← header, footer, content blocks
+│   ├── woocommerce/               ← WooCommerce template overrides
+│   └── assets/
+│       ├── css/                   ← tokens → base → layout → components → woocommerce → elementor → utilities
+│       └── js/app.js
+├── CLAUDE.md                      ← guidance for Claude / Claude Code
+├── features.md                    ← short inventory of what the storefront supports
+└── README.md                      ← you are here
 ```
 
-The theme is **modular by design**: each concern (setup, enqueue, customizer, WooCommerce, Elementor) lives in its own file under `inc/`, and the visual layer is split across small CSS modules under `assets/css/`. To turn off a feature or replace a layer, you edit a single file.
+---
+
+## The product line
+
+Starfrost ships in two sizes to start:
+
+- **3 mL** — the smaller pour
+- **10 mL** — the everyday size
+
+That's the line. We'd rather get two SKUs right than ship a catalog.
 
 ---
 
-## Design language
+## Running the storefront
 
-Starfrost is built around a small, deliberate design language.
+The production site is a WordPress install with WooCommerce and (optionally) Elementor.
 
-- **Void** — pure black `#000000` page background, with a near-invisible radial wash so the void never feels totally flat. No imagery is required to feel atmospheric.
-- **Frost** — ice-cyan `#a5f3fc` accent for interactive elements, paired with a softer glacier-blue `#7dd3fc` glow.
-- **Ghost white** `#f8f8ff` for primary text. Stardust `#8a8aa0` for muted text. Eclipse `#5a5a72` for low-emphasis.
-- **Type** — *Space Grotesk* for display, *Inter* for body. Tight tracking, generous line-height.
-- **Surfaces** — gently elevated panels with hairline borders (`#2a2a3a`). Frosted-glass headers and drawers.
-- **Motion** — short, soft easing (`cubic-bezier(0.16, 1, 0.3, 1)`). Respect `prefers-reduced-motion`.
+1. Drop `wp-content/themes/starfrost/` into a WordPress install's `wp-content/themes/` directory.
+2. In **Appearance → Themes**, activate **Starfrost**.
+3. Install and activate **WooCommerce**. The theme picks it up automatically.
+4. (Optional) install **Elementor** to compose pages with Starfrost-styled widgets.
+5. Set up the two products in **Products → Add New** (3 mL and 10 mL).
+6. Visit **Appearance → Customize → Starfrost** to set the brand color, top-bar message, and footer copy.
 
-All of these values live as CSS custom properties in [`wp-content/themes/starfrost/assets/css/tokens.css`](wp-content/themes/starfrost/assets/css/tokens.css). Edit there and the entire theme follows.
-
----
-
-## WooCommerce
-
-Starfrost declares full WooCommerce theme support and re-skins the most user-facing surfaces:
-
-- Shop archive (grid card layout, sale badges, ordering toolbar)
-- Single product (image, summary, tabs, related)
-- Cart page
-- Checkout page (sticky order summary on desktop)
-- My Account
-- Mini-cart inside an off-canvas drawer that opens from the header cart link
-- Cart count fragment auto-refreshes after AJAX add-to-cart
-
-Theme overrides live in `wp-content/themes/starfrost/woocommerce/`. The `inc/woocommerce.php` module wires up filters and hooks; CSS lives in `assets/css/woocommerce.css`.
+That's the setup. The theme bootstraps everything else from `functions.php` and the `inc/` modules.
 
 ---
 
-## Elementor
+## Look and feel
 
-Starfrost is built so Elementor can drive page composition without fighting the theme.
+Starfrost is dark-first and quiet.
 
-- The theme registers Starfrost as Elementor-aware on `elementor/loaded`.
-- Starfrost color tokens are injected into the Elementor editor and preview, so widgets pick up the brand palette automatically.
-- Elementor Pro theme builder locations (header / footer / single / archive) are registered.
-- An Elementor compatibility CSS layer reskins the default Elementor button, heading, and form widgets.
+- **Background**: pure black `#000000` with a faint radial wash so it doesn't feel flat.
+- **Accent**: ice-cyan `#a5f3fc` and a softer glacier glow `#7dd3fc`. Two colors do the work.
+- **Type**: *Space Grotesk* for display, *Inter* for body. Tight tracking on display.
+- **Surfaces**: hairline borders, generous spacing, frosted-glass header.
+- **Motion**: short, soft easing. Honors `prefers-reduced-motion`.
 
-If Elementor is not installed, the theme renders normally via its own templates.
-
----
-
-## Customizer options
-
-Settings → Appearance → Customize:
-
-- **Starfrost: Brand** — Frost accent color, glow color
-- **Starfrost: Header** — Top bar visibility + announcement message
-- **Starfrost: Footer** — Tagline, legal disclaimer
-
-These map to CSS variables that update live without recompiling stylesheets.
+All of this lives as CSS variables in [`wp-content/themes/starfrost/assets/css/tokens.css`](wp-content/themes/starfrost/assets/css/tokens.css). Edit there and the whole site follows.
 
 ---
 
-## Development
+## Editing the site
 
-Starfrost has no build step — everything in `assets/css/` and `assets/js/` is plain CSS and ES5+ JavaScript. The reasoning: a theme should be readable and editable by anyone who can open a file, and a Bac Water store does not need a webpack pipeline.
+There's no build step. Plain CSS, plain ES5+ JavaScript. Anyone who can open a file can edit it.
 
-Common tasks:
+Common edits:
 
-- **Tweak design tokens** → edit `assets/css/tokens.css`
-- **Adjust shop card markup** → edit `inc/woocommerce.php` and `assets/css/woocommerce.css`
-- **Change header layout** → edit `template-parts/header/site-header.php`
-- **Add a Customizer option** → edit `inc/customizer.php`
+- **Tweak brand colors / spacing / type** → `assets/css/tokens.css`
+- **Change the header layout** → `template-parts/header/site-header.php`
+- **Change the shop card markup** → `inc/woocommerce.php` + `assets/css/woocommerce.css`
+- **Add a Customizer option** → `inc/customizer.php`
 - **Add a new module** → drop a file in `inc/` and add it to the array in `functions.php`
 
 ---
 
 ## Hosting / GitHub Pages
 
-This repository uses **GitHub Pages** to host a public landing/preview page from the `main` branch's `/docs` folder.
+The public landing page is hosted on **GitHub Pages** from the `main` branch's `/docs` folder.
 
 - **Source**: `main` branch, `/docs` folder
 - **URL**: https://nors3ai.github.io/Water-Company/
 
-To enable: in the GitHub repo, go to **Settings → Pages**, select **Source: Deploy from a branch**, **Branch: main**, **Folder: /docs**, then click **Save**. Pages takes ~1–2 minutes to publish on first activation.
+To enable: in the GitHub repo, go to **Settings → Pages**, choose **Deploy from a branch**, set **Branch: `main`** and **Folder: `/docs`**, then **Save**. First publish takes ~1–2 minutes.
 
-Note: the username portion of a GitHub Pages URL (`nors3ai`) is served in lowercase regardless of org casing; the repo name portion (`Water-Company`) is case-sensitive.
+The username portion of a GitHub Pages URL (`nors3ai`) is served lowercase regardless of how the org is cased on GitHub. The repo name (`Water-Company`) is case-sensitive.
 
 ---
 
-## License
+## Disclaimer
 
-GPL-2.0-or-later. See [LICENSE](LICENSE) if present.
+Starfrost products are intended for laboratory and research use. Nothing in this repository or on the storefront is medical advice.

@@ -4,22 +4,23 @@ Guidance for Claude (and Claude Code) when working inside this repository.
 
 ## What this repo is
 
-This is the **Starfrost** WordPress + WooCommerce theme repository. Starfrost sells **Bacteriostatic Water** ("Bac Water") only — it is **not** a peptide company, **not** an astrology brand, and **not** affiliated with SpaceX. The "space" in the design language means **void, frost, dark, sleek, pure** — never planets, shuttles, aliens, or cosmic clutter.
+This is the **Starfrost** company website — a small operation shipping **3&nbsp;mL** and **10&nbsp;mL** products under the Starfrost name. We are not selling the theme; we are selling Starfrost. Keep that framing in everything you write.
 
-Public preview / docs: https://nors3ai.github.io/Water-Company/
+The "space" in the design language means **void, frost, dark, sleek, pure** — never planets, shuttles, aliens, or cosmic clutter.
+
+Public landing page: https://nors3ai.github.io/Water-Company/
 
 (GitHub Pages always serves the username/org portion in lowercase — `nors3ai` — but the repo name `Water-Company` is case-sensitive and keeps its caps.)
 
-## Branch model
-
-- Develop directly on **`main`**.
-- The user does **not** like pull requests. Push commits straight to `main`.
-- Never force-push, never reset, never delete branches without explicit permission.
-
-## Where things live
+## Repository
 
 ```
-wp-content/themes/starfrost/    ← the entire theme
+docs/                           ← public landing (GitHub Pages, main branch /docs)
+├── index.html
+├── assets/landing.css
+└── README.md
+
+wp-content/themes/starfrost/    ← the storefront theme
 ├── style.css                   ← theme metadata only (required by WordPress)
 ├── functions.php               ← bootstrap; loads everything in inc/
 ├── index.php / page.php / single.php / archive.php / search.php / 404.php
@@ -27,7 +28,7 @@ wp-content/themes/starfrost/    ← the entire theme
 ├── inc/                        ← one module per concern
 │   ├── setup.php               ← theme supports, menus, image sizes, palette
 │   ├── enqueue.php             ← CSS + JS registration (modular order matters)
-│   ├── template-tags.php       ← reusable template helpers (logo, cart link…)
+│   ├── template-tags.php       ← reusable template helpers
 │   ├── template-functions.php  ← filters, body classes, excerpt tweaks
 │   ├── customizer.php          ← brand controls (color, top-bar, footer text)
 │   ├── woocommerce.php         ← WC integration + loop reskin
@@ -39,11 +40,25 @@ wp-content/themes/starfrost/    ← the entire theme
     ├── js/app.js               ← drawers, sticky header, submenus
     ├── fonts/, images/, svg/
 
-docs/                           ← GitHub Pages site (served from main/docs)
 README.md                       ← human-facing intro
-features.md                     ← feature inventory + roadmap
+features.md                     ← short inventory of what the storefront supports
 CLAUDE.md                       ← (this file)
 ```
+
+## Branch model
+
+- Develop directly on **`main`**.
+- The user does **not** like pull requests. Push commits straight to `main`.
+- Never force-push, never reset, never delete branches without explicit permission.
+
+## Voice (do not stray)
+
+The site is for **a company**, not a theme. When you write copy, default text, or commit messages, write like Starfrost is the product. Don't brag about the theme. Don't list theme features in user-facing copy.
+
+- **Lead with the product.** Two sizes — 3 mL and 10 mL. That's the line.
+- **Be quiet.** Short sentences. No marketing fluff. No exclamation points.
+- **No clichés.** No rocket emojis, no planet illustrations, no astrology iconography, no "to the moon" language. Starfrost reads as a clinical, modern operation that happens to feel like deep space.
+- **No theme talk in the public landing.** `docs/index.html` is the company website — it should read like a company website, not a theme demo.
 
 ## Design language (do not stray)
 
@@ -52,7 +67,6 @@ CLAUDE.md                       ← (this file)
 - **Type**: *Space Grotesk* for display headings; *Inter* for body. Tight tracking on display.
 - **Surfaces**: hairline borders (`--sf-border`), generous spacing, frosted-glass header/drawer.
 - **Motion**: `cubic-bezier(0.16, 1, 0.3, 1)`, short and soft. Honor `prefers-reduced-motion`.
-- **No clichés**: no rocket emojis, no planet illustrations, no astrology iconography, no "to the moon" language. Starfrost reads as a **clinical, modern lab brand** that happens to feel like deep space.
 
 ## Conventions
 
@@ -74,12 +88,9 @@ CLAUDE.md                       ← (this file)
 
 ## When changing docs
 
-- The public landing page is `docs/index.html` (served from `main` branch, `/docs` folder, at https://nors3ai.github.io/Water-Company/).
-- `README.md` is the developer-facing intro.
-- `features.md` is the feature inventory and roadmap.
-- `CLAUDE.md` (this file) is the guidance for Claude.
-
-When Starfrost gains new capabilities, update `features.md` first.
+- The public landing page is `docs/index.html` (served from `main` branch, `/docs` folder, at https://nors3ai.github.io/Water-Company/). It is the company landing — keep it about Starfrost and the products, not about the theme.
+- `README.md` is the developer-facing intro for someone landing in this repo.
+- `features.md` is a short inventory of what the storefront supports.
 
 ## Do / don't
 
@@ -89,13 +100,13 @@ When Starfrost gains new capabilities, update `features.md` first.
 - Keep PHP, CSS, JS modular. One concern per file.
 - Use `sf-` / `starfrost_` / `STARFROST_` prefixes.
 - Re-use design tokens.
-- Leave concise comments where logic isn't self-evident.
+- Write copy that sounds like a small careful company.
 
 **Don't**
 
 - Don't open pull requests. The user doesn't like them.
 - Don't pull in heavy build tools (webpack, vite, sass) without an explicit ask.
 - Don't introduce astrology / SpaceX / planet imagery.
-- Don't suggest the brand sells peptides — it doesn't.
+- Don't sell the theme on the public landing — sell Starfrost.
 - Don't bypass WP escaping or sanitization.
 - Don't rename the `starfrost` theme slug or `'starfrost'` text domain casually — many places reference it.
