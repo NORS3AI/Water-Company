@@ -1,0 +1,69 @@
+/* =============================================================
+   Glacix — Elementor compatibility layer
+   Makes Elementor-built sections honor Glacix design tokens.
+   ============================================================= */
+
+/* Make Elementor sections inherit the void background by default. */
+.elementor-section {
+	color: var(--gx-text);
+}
+
+/* Buttons placed via Elementor adopt the brand pill style unless overridden. */
+.elementor-button-wrapper .elementor-button {
+	font-family: var(--gx-font-display);
+	font-weight: 600;
+	letter-spacing: var(--gx-tracking-wide);
+	border-radius: var(--gx-radius-pill);
+	padding: 0.85rem 1.5rem;
+	transition: all var(--gx-dur-base) var(--gx-ease-soft);
+}
+.elementor-button-wrapper .elementor-button:hover {
+	box-shadow: var(--gx-glow-md);
+}
+
+/* Headings inside Elementor honor the display font. */
+.elementor-heading-title {
+	font-family: var(--gx-font-display);
+	letter-spacing: var(--gx-tracking-tight);
+	color: var(--gx-text);
+}
+
+/* Image boxes and icon boxes pick up surface treatment by default. */
+.elementor-widget-image-box .elementor-image-box-wrapper,
+.elementor-widget-icon-box .elementor-icon-box-wrapper {
+	color: var(--gx-text-soft);
+}
+
+/* Form widget */
+.elementor-form .elementor-field {
+	background: var(--gx-bg-elevated);
+	border: 1px solid var(--gx-border);
+	color: var(--gx-text);
+	border-radius: var(--gx-radius-md);
+}
+.elementor-form .elementor-field:focus {
+	border-color: var(--gx-accent);
+	box-shadow: 0 0 0 3px var(--gx-color-frost-soft);
+}
+.elementor-form .elementor-field-label {
+	color: var(--gx-text-soft);
+}
+
+/* Divider takes the frost gradient. */
+.elementor-divider-separator {
+	background: linear-gradient(90deg, transparent, var(--gx-border-strong), transparent);
+}
+
+/* Card-style hover for Elementor "Image Box" used as a feature tile. */
+.gx-tile .elementor-image-box-wrapper {
+	background: var(--gx-bg-elevated);
+	border: 1px solid var(--gx-border);
+	border-radius: var(--gx-radius-lg);
+	padding: var(--gx-space-6);
+	transition: border-color var(--gx-dur-base) var(--gx-ease-soft),
+	            transform var(--gx-dur-base) var(--gx-ease-soft);
+}
+.gx-tile .elementor-image-box-wrapper:hover {
+	border-color: var(--gx-color-frost-line);
+	transform: translateY(-2px);
+}

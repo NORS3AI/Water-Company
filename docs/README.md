@@ -1,4 +1,4 @@
-# Starfrost — GitHub Pages source
+# Glacix — GitHub Pages source
 
 This folder is the GitHub Pages source for **https://nors3ai.github.io/Water-Company/**.
 

@@ -1,0 +1,300 @@
+/* =============================================================
+   Glacix — Base
+   Reset, root layout, typography, links, focus, selection.
+   ============================================================= */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	scroll-behavior: smooth;
+	background-color: var(--gx-bg);
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: var(--gx-font-body);
+	font-size: var(--gx-text-base);
+	line-height: var(--gx-leading-base);
+	color: var(--gx-text);
+	background-color: var(--gx-bg);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+}
+
+/* The void: a subtle radial wash so the page never feels totally flat. */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background:
+		radial-gradient(ellipse 80% 50% at 50% -10%, rgba(125, 211, 252, 0.06), transparent 60%),
+		radial-gradient(ellipse 60% 40% at 80% 110%, rgba(96, 165, 250, 0.04), transparent 70%);
+	z-index: 0;
+}
+
+#page {
+	position: relative;
+	z-index: var(--gx-z-base);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* ----- Headings ----- */
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--gx-font-display);
+	font-weight: 600;
+	line-height: var(--gx-leading-tight);
+	letter-spacing: var(--gx-tracking-tight);
+	color: var(--gx-text);
+	margin: 0 0 var(--gx-space-4);
+}
+
+h1 { font-size: clamp(var(--gx-text-3xl), 5vw, var(--gx-text-5xl)); font-weight: 700; }
+h2 { font-size: clamp(var(--gx-text-2xl), 4vw, var(--gx-text-4xl)); }
+h3 { font-size: clamp(var(--gx-text-xl), 3vw, var(--gx-text-3xl)); }
+h4 { font-size: var(--gx-text-xl); }
+h5 { font-size: var(--gx-text-lg); }
+h6 { font-size: var(--gx-text-md); text-transform: uppercase; letter-spacing: var(--gx-tracking-wider); color: var(--gx-text-muted); }
+
+/* ----- Paragraph + inline ----- */
+p {
+	margin: 0 0 var(--gx-space-4);
+	color: var(--gx-text-soft);
+}
+p:last-child { margin-bottom: 0; }
+
+strong, b { color: var(--gx-text); font-weight: 600; }
+em, i { font-style: italic; }
+small { font-size: var(--gx-text-sm); color: var(--gx-text-muted); }
+
+code, pre, kbd, samp {
+	font-family: var(--gx-font-mono);
+	font-size: 0.9em;
+}
+code {
+	padding: 0.1em 0.4em;
+	background-color: var(--gx-bg-surface);
+	border: 1px solid var(--gx-border);
+	border-radius: var(--gx-radius-sm);
+	color: var(--gx-color-frost);
+}
+pre {
+	padding: var(--gx-space-5);
+	background-color: var(--gx-bg-elevated);
+	border: 1px solid var(--gx-border);
+	border-radius: var(--gx-radius-md);
+	overflow-x: auto;
+	color: var(--gx-text-soft);
+}
+
+/* ----- Links ----- */
+a {
+	color: var(--gx-accent);
+	text-decoration: none;
+	transition: color var(--gx-dur-fast) var(--gx-ease-soft);
+}
+a:hover,
+a:focus-visible {
+	color: var(--gx-color-ghost);
+}
+
+/* ----- Lists ----- */
+ul, ol {
+	margin: 0 0 var(--gx-space-5);
+	padding-left: var(--gx-space-5);
+	color: var(--gx-text-soft);
+}
+li + li {
+	margin-top: var(--gx-space-2);
+}
+
+/* ----- Quotes ----- */
+blockquote {
+	margin: var(--gx-space-6) 0;
+	padding: var(--gx-space-5) var(--gx-space-6);
+	border-left: 2px solid var(--gx-accent);
+	background: var(--gx-color-frost-soft);
+	color: var(--gx-text);
+	font-size: var(--gx-text-md);
+	border-radius: 0 var(--gx-radius-md) var(--gx-radius-md) 0;
+}
+
+/* ----- Media ----- */
+img, svg, video, canvas, audio, iframe, embed, object {
+	display: block;
+	max-width: 100%;
+}
+img, video {
+	height: auto;
+}
+
+figure {
+	margin: 0 0 var(--gx-space-5);
+}
+figcaption {
+	margin-top: var(--gx-space-2);
+	font-size: var(--gx-text-sm);
+	color: var(--gx-text-muted);
+}
+
+/* ----- Forms ----- */
+input, textarea, select, button {
+	font: inherit;
+	color: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	background-color: var(--gx-bg-elevated);
+	border: 1px solid var(--gx-border);
+	border-radius: var(--gx-radius-md);
+	color: var(--gx-text);
+	transition: border-color var(--gx-dur-fast) var(--gx-ease-soft),
+	            box-shadow var(--gx-dur-fast) var(--gx-ease-soft),
+	            background-color var(--gx-dur-fast) var(--gx-ease-soft);
+}
+input::placeholder,
+textarea::placeholder {
+	color: var(--gx-color-eclipse);
+}
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: var(--gx-accent);
+	background-color: var(--gx-bg-surface);
+	box-shadow: 0 0 0 3px var(--gx-color-frost-soft);
+}
+
+/* ----- Tables ----- */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0 0 var(--gx-space-5);
+}
+th, td {
+	padding: var(--gx-space-3) var(--gx-space-4);
+	text-align: left;
+	border-bottom: 1px solid var(--gx-border);
+}
+th {
+	font-family: var(--gx-font-display);
+	font-weight: 600;
+	color: var(--gx-text);
+	font-size: var(--gx-text-sm);
+	text-transform: uppercase;
+	letter-spacing: var(--gx-tracking-wider);
+}
+
+/* ----- Horizontal rule ----- */
+hr {
+	border: 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--gx-border-strong), transparent);
+	margin: var(--gx-space-7) 0;
+}
+
+/* ----- Selection ----- */
+::selection {
+	background-color: var(--gx-color-frost);
+	color: var(--gx-color-void);
+}
+
+/* ----- Focus visible ----- */
+:focus-visible {
+	outline: 2px solid var(--gx-accent);
+	outline-offset: 2px;
+	border-radius: var(--gx-radius-sm);
+}
+
+/* ----- Skip link ----- */
+.skip-link {
+	position: absolute;
+	left: -9999rem;
+	top: var(--gx-space-3);
+	z-index: var(--gx-z-toast);
+	padding: var(--gx-space-3) var(--gx-space-4);
+	background: var(--gx-accent);
+	color: var(--gx-color-void);
+	border-radius: var(--gx-radius-md);
+	font-weight: 600;
+}
+.skip-link:focus {
+	left: var(--gx-space-3);
+}
+
+/* ----- Screen reader only ----- */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+	background-color: var(--gx-bg-surface);
+	border-radius: var(--gx-radius-sm);
+	clip: auto !important;
+	clip-path: none;
+	color: var(--gx-text);
+	display: block;
+	font-size: var(--gx-text-sm);
+	font-weight: 600;
+	height: auto;
+	left: var(--gx-space-3);
+	line-height: normal;
+	padding: var(--gx-space-3) var(--gx-space-4);
+	text-decoration: none;
+	top: var(--gx-space-3);
+	width: auto;
+	z-index: var(--gx-z-toast);
+}
+
+/* Scrollbar — minimal but visible against the void. */
+@supports (scrollbar-width: thin) {
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: var(--gx-border-strong) transparent;
+	}
+}
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--gx-border-strong);
+	border-radius: var(--gx-radius-pill);
+	border: 2px solid var(--gx-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--gx-color-mist);
+}

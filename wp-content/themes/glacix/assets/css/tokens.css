@@ -1,0 +1,146 @@
+/* =============================================================
+   Glacix — Design Tokens
+   -------------------------------------------------------------
+   The single source of truth for color, type, spacing, radius,
+   shadow, motion. Anything that needs to be themed lives here.
+   ============================================================= */
+
+:root {
+	/* ----- Color: Void canvas ----- */
+	--gx-color-void:       #000000;  /* absolute black, page background */
+	--gx-color-obsidian:   #050509;  /* near black, deep panels */
+	--gx-color-onyx:       #0b0b13;  /* primary surface */
+	--gx-color-graphite:   #14141f;  /* elevated surface */
+	--gx-color-slate:      #1c1c2a;  /* highest surface */
+	--gx-color-fog:        #2a2a3a;  /* hairline borders */
+	--gx-color-mist:       #3a3a4f;  /* subdued borders */
+
+	/* ----- Color: Frost spectrum ----- */
+	--gx-color-frost:      #a5f3fc;  /* primary accent (ice cyan) */
+	--gx-color-glacier:    #7dd3fc;  /* secondary accent (cool sky) */
+	--gx-color-aurora:     #60a5fa;  /* tertiary accent (deep frost) */
+	--gx-color-frost-soft: rgba(165, 243, 252, 0.12);
+	--gx-color-frost-line: rgba(165, 243, 252, 0.24);
+	--gx-color-glow:       rgba(125, 211, 252, 0.35);
+
+	/* ----- Color: Type ----- */
+	--gx-color-ghost:      #f8f8ff;  /* ghost white, primary text */
+	--gx-color-cloud:      #d8d8e6;  /* secondary text */
+	--gx-color-stardust:   #8a8aa0;  /* muted text */
+	--gx-color-eclipse:    #5a5a72;  /* low-emphasis text / disabled */
+
+	/* ----- Color: System ----- */
+	--gx-color-success:    #4ade80;
+	--gx-color-warning:    #facc15;
+	--gx-color-danger:     #f87171;
+	--gx-color-info:       #7dd3fc;
+
+	/* ----- Semantic aliases ----- */
+	--gx-bg:               var(--gx-color-void);
+	--gx-bg-elevated:      var(--gx-color-onyx);
+	--gx-bg-surface:       var(--gx-color-graphite);
+	--gx-bg-surface-2:     var(--gx-color-slate);
+	--gx-border:           var(--gx-color-fog);
+	--gx-border-strong:    var(--gx-color-mist);
+	--gx-text:             var(--gx-color-ghost);
+	--gx-text-muted:       var(--gx-color-stardust);
+	--gx-text-soft:        var(--gx-color-cloud);
+	--gx-accent:           var(--gx-color-frost);
+	--gx-accent-2:         var(--gx-color-glacier);
+
+	/* ----- Typography ----- */
+	--gx-font-display:     'Space Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--gx-font-body:        'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+	--gx-font-mono:        ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+	--gx-text-xs:    0.75rem;   /* 12px */
+	--gx-text-sm:    0.875rem;  /* 14px */
+	--gx-text-base:  1rem;      /* 16px */
+	--gx-text-md:    1.125rem;  /* 18px */
+	--gx-text-lg:    1.375rem;  /* 22px */
+	--gx-text-xl:    1.75rem;   /* 28px */
+	--gx-text-2xl:   2.25rem;   /* 36px */
+	--gx-text-3xl:   3rem;      /* 48px */
+	--gx-text-4xl:   4rem;      /* 64px */
+	--gx-text-5xl:   5.5rem;    /* 88px */
+
+	--gx-leading-tight: 1.1;
+	--gx-leading-snug:  1.3;
+	--gx-leading-base:  1.55;
+	--gx-leading-loose: 1.75;
+
+	--gx-tracking-tight:  -0.02em;
+	--gx-tracking-snug:   -0.01em;
+	--gx-tracking-base:   0;
+	--gx-tracking-wide:   0.04em;
+	--gx-tracking-wider:  0.12em;
+
+	/* ----- Spacing scale (4px base) ----- */
+	--gx-space-0:    0;
+	--gx-space-1:    0.25rem;   /*  4px */
+	--gx-space-2:    0.5rem;    /*  8px */
+	--gx-space-3:    0.75rem;   /* 12px */
+	--gx-space-4:    1rem;      /* 16px */
+	--gx-space-5:    1.5rem;    /* 24px */
+	--gx-space-6:    2rem;      /* 32px */
+	--gx-space-7:    2.5rem;    /* 40px */
+	--gx-space-8:    3rem;      /* 48px */
+	--gx-space-9:    4rem;      /* 64px */
+	--gx-space-10:   5rem;      /* 80px */
+	--gx-space-11:   6rem;      /* 96px */
+	--gx-space-12:   8rem;      /* 128px */
+
+	/* ----- Radii ----- */
+	--gx-radius-xs:  4px;
+	--gx-radius-sm:  6px;
+	--gx-radius-md:  10px;
+	--gx-radius-lg:  16px;
+	--gx-radius-xl:  24px;
+	--gx-radius-pill: 999px;
+
+	/* ----- Shadows / glow ----- */
+	--gx-shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.6);
+	--gx-shadow-md:  0 4px 16px rgba(0, 0, 0, 0.55), 0 1px 2px rgba(0, 0, 0, 0.6);
+	--gx-shadow-lg:  0 24px 60px rgba(0, 0, 0, 0.65), 0 2px 6px rgba(0, 0, 0, 0.6);
+	--gx-shadow-xl:  0 40px 120px rgba(0, 0, 0, 0.8);
+
+	--gx-glow-sm:    0 0 12px rgba(125, 211, 252, 0.18);
+	--gx-glow-md:    0 0 32px rgba(125, 211, 252, 0.25);
+	--gx-glow-lg:    0 0 80px rgba(125, 211, 252, 0.30);
+
+	/* ----- Layout ----- */
+	--gx-container-max:        1320px;
+	--gx-container-narrow:     880px;
+	--gx-container-wide:       1480px;
+	--gx-container-padding:    clamp(1.25rem, 4vw, 2.5rem);
+	--gx-header-height:        76px;
+	--gx-topbar-height:        36px;
+
+	/* ----- Motion ----- */
+	--gx-ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+	--gx-ease-in:    cubic-bezier(0.7, 0, 0.84, 0);
+	--gx-ease-soft:  cubic-bezier(0.4, 0, 0.2, 1);
+
+	--gx-dur-fast:   140ms;
+	--gx-dur-base:   240ms;
+	--gx-dur-slow:   420ms;
+	--gx-dur-lazy:   720ms;
+
+	/* ----- Z-index scale ----- */
+	--gx-z-base:       1;
+	--gx-z-sticky:     50;
+	--gx-z-header:     100;
+	--gx-z-drawer:     200;
+	--gx-z-modal:      300;
+	--gx-z-toast:      400;
+}
+
+/* Reduced motion respect. */
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--gx-dur-fast: 0ms;
+		--gx-dur-base: 0ms;
+		--gx-dur-slow: 0ms;
+		--gx-dur-lazy: 0ms;
+	}
+}

@@ -1,0 +1,69 @@
+/* =============================================================
+   Glacix — Utilities
+   Tiny single-purpose helper classes.
+   ============================================================= */
+
+/* Display */
+.gx-hidden  { display: none !important; }
+.gx-block   { display: block !important; }
+.gx-flex    { display: flex !important; }
+.gx-grid    { display: grid !important; }
+.gx-inline  { display: inline !important; }
+.gx-inline-block { display: inline-block !important; }
+
+/* Alignment */
+.gx-text-left   { text-align: left; }
+.gx-text-center { text-align: center; }
+.gx-text-right  { text-align: right; }
+
+/* Color */
+.gx-color-frost    { color: var(--gx-accent); }
+.gx-color-glacier  { color: var(--gx-color-glacier); }
+.gx-color-ghost    { color: var(--gx-text); }
+.gx-color-stardust { color: var(--gx-text-muted); }
+
+/* Type weights */
+.gx-fw-400 { font-weight: 400; }
+.gx-fw-500 { font-weight: 500; }
+.gx-fw-600 { font-weight: 600; }
+.gx-fw-700 { font-weight: 700; }
+
+/* Type families */
+.gx-font-display { font-family: var(--gx-font-display); }
+.gx-font-body    { font-family: var(--gx-font-body); }
+.gx-font-mono    { font-family: var(--gx-font-mono); }
+
+/* Eyebrow / overline */
+.gx-eyebrow {
+	display: inline-block;
+	color: var(--gx-accent);
+	font-family: var(--gx-font-display);
+	font-size: var(--gx-text-xs);
+	font-weight: 600;
+	letter-spacing: var(--gx-tracking-wider);
+	text-transform: uppercase;
+}
+
+/* Gap helpers */
+.gx-stack > * + * { margin-top: var(--gx-space-4); }
+.gx-stack--sm > * + * { margin-top: var(--gx-space-2); }
+.gx-stack--lg > * + * { margin-top: var(--gx-space-6); }
+
+/* Visually hidden */
+.gx-sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Lock body scroll when a drawer / modal is open */
+.gx-no-scroll {
+	overflow: hidden;
+	touch-action: none;
+}

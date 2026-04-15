@@ -1,6 +1,6 @@
-# Starfrost — Storefront inventory
+# Glacix — Storefront inventory
 
-A short list of what the Starfrost website supports today. This is not a marketing page — it's a checklist for whoever has to keep the site running.
+A short list of what the Glacix website supports today. This is not a marketing page — it's a checklist for whoever has to keep the site running.
 
 > Live site: https://nors3ai.github.io/Water-Company/
 
@@ -8,7 +8,7 @@ A short list of what the Starfrost website supports today. This is not a marketi
 
 ## Product line
 
-Starfrost ships **Bacteriostatic Water** in two sizes:
+Glacix ships **Bacteriostatic Water** in two sizes:
 
 - **3 mL** — the smaller pour
 - **10 mL** — the everyday size

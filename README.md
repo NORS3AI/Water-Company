@@ -1,15 +1,15 @@
-# Starfrost
+# Glacix
 
-The website for **Starfrost** — Bacteriostatic Water, in 3&nbsp;mL and 10&nbsp;mL. **Pure. Clean. Quality.**
+The website for **Glacix** — Bacteriostatic Water, in 3&nbsp;mL and 10&nbsp;mL. **Pure. Clean. Quality.**
 
 > Live site / preview: **https://nors3ai.github.io/Water-Company/**
 
 This repository holds two things:
 
-1. **`docs/`** — the public-facing landing page for Starfrost, hosted on GitHub Pages.
-2. **`wp-content/themes/starfrost/`** — the WordPress + WooCommerce theme that powers the production storefront.
+1. **`docs/`** — the public-facing landing page for Glacix, hosted on GitHub Pages.
+2. **`wp-content/themes/glacix/`** — the WordPress + WooCommerce theme that powers the production storefront.
 
-The codebase exists to run the company website. We aren't selling the theme — we're selling Starfrost.
+The codebase exists to run the company website. We aren't selling the theme — we're selling Glacix.
 
 ---
 
@@ -21,7 +21,7 @@ Water-Company/
 │   ├── index.html
 │   ├── assets/landing.css
 │   └── README.md
-├── wp-content/themes/starfrost/   ← the storefront theme
+├── wp-content/themes/glacix/   ← the storefront theme
 │   ├── style.css                  ← theme metadata
 │   ├── functions.php              ← bootstrap; loads inc/*
 │   ├── header.php / footer.php / page.php / single.php / index.php
@@ -48,7 +48,7 @@ Water-Company/
 
 ## The product line
 
-Starfrost ships **Bacteriostatic Water** in two sizes to start:
+Glacix ships **Bacteriostatic Water** in two sizes to start:
 
 - **3 mL** — the smaller pour
 - **10 mL** — the everyday size
@@ -61,12 +61,12 @@ Two SKUs. One standard. **Pure. Clean. Quality.**
 
 The production site is a WordPress install with WooCommerce and (optionally) Elementor.
 
-1. Drop `wp-content/themes/starfrost/` into a WordPress install's `wp-content/themes/` directory.
-2. In **Appearance → Themes**, activate **Starfrost**.
+1. Drop `wp-content/themes/glacix/` into a WordPress install's `wp-content/themes/` directory.
+2. In **Appearance → Themes**, activate **Glacix**.
 3. Install and activate **WooCommerce**. The theme picks it up automatically.
-4. (Optional) install **Elementor** to compose pages with Starfrost-styled widgets.
+4. (Optional) install **Elementor** to compose pages with Glacix-styled widgets.
 5. Set up the two products in **Products → Add New** (3 mL and 10 mL).
-6. Visit **Appearance → Customize → Starfrost** to set the brand color, top-bar message, and footer copy.
+6. Visit **Appearance → Customize → Glacix** to set the brand color, top-bar message, and footer copy.
 
 That's the setup. The theme bootstraps everything else from `functions.php` and the `inc/` modules.
 
@@ -74,7 +74,7 @@ That's the setup. The theme bootstraps everything else from `functions.php` and 
 
 ## Look and feel
 
-Starfrost is dark-first and minimal.
+Glacix is dark-first and minimal.
 
 - **Background**: pure black `#000000` with a faint radial wash so it doesn't feel flat.
 - **Accent**: ice-cyan `#a5f3fc` and a softer glacier glow `#7dd3fc`. Two colors do the work.
@@ -82,7 +82,7 @@ Starfrost is dark-first and minimal.
 - **Surfaces**: hairline borders, generous spacing, frosted-glass header.
 - **Motion**: short, soft easing. Honors `prefers-reduced-motion`.
 
-All of this lives as CSS variables in [`wp-content/themes/starfrost/assets/css/tokens.css`](wp-content/themes/starfrost/assets/css/tokens.css). Edit there and the whole site follows.
+All of this lives as CSS variables in [`wp-content/themes/glacix/assets/css/tokens.css`](wp-content/themes/glacix/assets/css/tokens.css). Edit there and the whole site follows.
 
 ---
 
@@ -115,4 +115,4 @@ The username portion of a GitHub Pages URL (`nors3ai`) is served lowercase regar
 
 ## Disclaimer
 
-Starfrost Bacteriostatic Water is intended for laboratory and research use. Nothing in this repository or on the storefront is medical advice.
+Glacix Bacteriostatic Water is intended for laboratory and research use. Nothing in this repository or on the storefront is medical advice.
