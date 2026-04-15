@@ -2,7 +2,7 @@
 
 A WooCommerce theme for **Starfrost** — a Bacteriostatic Water company. Pure void canvas, frost-blue accents, modern and sleek.
 
-> Live preview / docs: **https://NORS3AI.github.io/Water-Company/**
+> Live preview / docs: **https://nors3ai.github.io/Water-Company/**
 
 Starfrost is a WordPress theme built specifically for selling Bacteriostatic Water (Bac Water). It is designed to feel modern, clinical, and uncluttered — like staring into deep, quiet space — while staying friendly to merchants who build pages with **Elementor** on top of **WooCommerce**.
 
@@ -19,7 +19,7 @@ The project name **Starfrost** is the working company name (still pending). The 
 | **Built for** | WordPress 6.2+, WooCommerce, Elementor (optional) |
 | **PHP** | 7.4+ |
 | **Aesthetic** | Void, frost, sleek, modern. Dark-first. |
-| **Live demo / docs** | https://NORS3AI.github.io/Water-Company/ |
+| **Live demo / docs** | https://nors3ai.github.io/Water-Company/ |
 | **License** | GPL-2.0-or-later |
 
 ---
@@ -162,9 +162,11 @@ Common tasks:
 This repository uses **GitHub Pages** to host a public landing/preview page from the `main` branch's `/docs` folder.
 
 - **Source**: `main` branch, `/docs` folder
-- **URL**: https://NORS3AI.github.io/Water-Company/
+- **URL**: https://nors3ai.github.io/Water-Company/
 
-To enable: in the GitHub repo, go to **Settings → Pages**, select **Branch: main** and **Folder: /docs**, then save.
+To enable: in the GitHub repo, go to **Settings → Pages**, select **Source: Deploy from a branch**, **Branch: main**, **Folder: /docs**, then click **Save**. Pages takes ~1–2 minutes to publish on first activation.
+
+Note: the username portion of a GitHub Pages URL (`nors3ai`) is served in lowercase regardless of org casing; the repo name portion (`Water-Company`) is case-sensitive.
 
 ---
 

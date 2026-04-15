@@ -6,7 +6,9 @@ Guidance for Claude (and Claude Code) when working inside this repository.
 
 This is the **Starfrost** WordPress + WooCommerce theme repository. Starfrost sells **Bacteriostatic Water** ("Bac Water") only — it is **not** a peptide company, **not** an astrology brand, and **not** affiliated with SpaceX. The "space" in the design language means **void, frost, dark, sleek, pure** — never planets, shuttles, aliens, or cosmic clutter.
 
-Public preview / docs: https://NORS3AI.github.io/Water-Company/
+Public preview / docs: https://nors3ai.github.io/Water-Company/
+
+(GitHub Pages always serves the username/org portion in lowercase — `nors3ai` — but the repo name `Water-Company` is case-sensitive and keeps its caps.)
 
 ## Branch model
 
@@ -72,7 +74,7 @@ CLAUDE.md                       ← (this file)
 
 ## When changing docs
 
-- The public landing page is `docs/index.html` (served from `main` branch, `/docs` folder, at https://NORS3AI.github.io/Water-Company/).
+- The public landing page is `docs/index.html` (served from `main` branch, `/docs` folder, at https://nors3ai.github.io/Water-Company/).
 - `README.md` is the developer-facing intro.
 - `features.md` is the feature inventory and roadmap.
 - `CLAUDE.md` (this file) is the guidance for Claude.

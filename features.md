@@ -2,7 +2,7 @@
 
 A living inventory of what the theme ships with today and what is on the horizon.
 
-> Live preview / docs: https://NORS3AI.github.io/Water-Company/
+> Live preview / docs: https://nors3ai.github.io/Water-Company/
 
 ---
 
@@ -67,7 +67,7 @@ A living inventory of what the theme ships with today and what is on the horizon
 - **`README.md`** — public-facing project intro and dev guide.
 - **`CLAUDE.md`** — guidance for Claude / Claude Code working in this repo.
 - **`features.md`** — this file.
-- **`docs/index.html`** — GitHub Pages landing page hosted at https://NORS3AI.github.io/Water-Company/.
+- **`docs/index.html`** — GitHub Pages landing page hosted at https://nors3ai.github.io/Water-Company/.
 
 ---
 

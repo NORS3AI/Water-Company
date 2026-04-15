@@ -1,6 +1,6 @@
 # Starfrost — GitHub Pages source
 
-This folder is the GitHub Pages source for **https://NORS3AI.github.io/Water-Company/**.
+This folder is the GitHub Pages source for **https://nors3ai.github.io/Water-Company/**.
 
 GitHub Pages is configured to serve from the `main` branch, `/docs` folder.
 
