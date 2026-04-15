@@ -1,0 +1,69 @@
+/* =============================================================
+   Starfrost — Elementor compatibility layer
+   Makes Elementor-built sections honor Starfrost design tokens.
+   ============================================================= */
+
+/* Make Elementor sections inherit the void background by default. */
+.elementor-section {
+	color: var(--sf-text);
+}
+
+/* Buttons placed via Elementor adopt the brand pill style unless overridden. */
+.elementor-button-wrapper .elementor-button {
+	font-family: var(--sf-font-display);
+	font-weight: 600;
+	letter-spacing: var(--sf-tracking-wide);
+	border-radius: var(--sf-radius-pill);
+	padding: 0.85rem 1.5rem;
+	transition: all var(--sf-dur-base) var(--sf-ease-soft);
+}
+.elementor-button-wrapper .elementor-button:hover {
+	box-shadow: var(--sf-glow-md);
+}
+
+/* Headings inside Elementor honor the display font. */
+.elementor-heading-title {
+	font-family: var(--sf-font-display);
+	letter-spacing: var(--sf-tracking-tight);
+	color: var(--sf-text);
+}
+
+/* Image boxes and icon boxes pick up surface treatment by default. */
+.elementor-widget-image-box .elementor-image-box-wrapper,
+.elementor-widget-icon-box .elementor-icon-box-wrapper {
+	color: var(--sf-text-soft);
+}
+
+/* Form widget */
+.elementor-form .elementor-field {
+	background: var(--sf-bg-elevated);
+	border: 1px solid var(--sf-border);
+	color: var(--sf-text);
+	border-radius: var(--sf-radius-md);
+}
+.elementor-form .elementor-field:focus {
+	border-color: var(--sf-accent);
+	box-shadow: 0 0 0 3px var(--sf-color-frost-soft);
+}
+.elementor-form .elementor-field-label {
+	color: var(--sf-text-soft);
+}
+
+/* Divider takes the frost gradient. */
+.elementor-divider-separator {
+	background: linear-gradient(90deg, transparent, var(--sf-border-strong), transparent);
+}
+
+/* Card-style hover for Elementor "Image Box" used as a feature tile. */
+.sf-tile .elementor-image-box-wrapper {
+	background: var(--sf-bg-elevated);
+	border: 1px solid var(--sf-border);
+	border-radius: var(--sf-radius-lg);
+	padding: var(--sf-space-6);
+	transition: border-color var(--sf-dur-base) var(--sf-ease-soft),
+	            transform var(--sf-dur-base) var(--sf-ease-soft);
+}
+.sf-tile .elementor-image-box-wrapper:hover {
+	border-color: var(--sf-color-frost-line);
+	transform: translateY(-2px);
+}

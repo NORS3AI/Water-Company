@@ -1,0 +1,300 @@
+/* =============================================================
+   Starfrost — Base
+   Reset, root layout, typography, links, focus, selection.
+   ============================================================= */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+	scroll-behavior: smooth;
+	background-color: var(--sf-bg);
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	font-family: var(--sf-font-body);
+	font-size: var(--sf-text-base);
+	line-height: var(--sf-leading-base);
+	color: var(--sf-text);
+	background-color: var(--sf-bg);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
+}
+
+/* The void: a subtle radial wash so the page never feels totally flat. */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	background:
+		radial-gradient(ellipse 80% 50% at 50% -10%, rgba(125, 211, 252, 0.06), transparent 60%),
+		radial-gradient(ellipse 60% 40% at 80% 110%, rgba(96, 165, 250, 0.04), transparent 70%);
+	z-index: 0;
+}
+
+#page {
+	position: relative;
+	z-index: var(--sf-z-base);
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+/* ----- Headings ----- */
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--sf-font-display);
+	font-weight: 600;
+	line-height: var(--sf-leading-tight);
+	letter-spacing: var(--sf-tracking-tight);
+	color: var(--sf-text);
+	margin: 0 0 var(--sf-space-4);
+}
+
+h1 { font-size: clamp(var(--sf-text-3xl), 5vw, var(--sf-text-5xl)); font-weight: 700; }
+h2 { font-size: clamp(var(--sf-text-2xl), 4vw, var(--sf-text-4xl)); }
+h3 { font-size: clamp(var(--sf-text-xl), 3vw, var(--sf-text-3xl)); }
+h4 { font-size: var(--sf-text-xl); }
+h5 { font-size: var(--sf-text-lg); }
+h6 { font-size: var(--sf-text-md); text-transform: uppercase; letter-spacing: var(--sf-tracking-wider); color: var(--sf-text-muted); }
+
+/* ----- Paragraph + inline ----- */
+p {
+	margin: 0 0 var(--sf-space-4);
+	color: var(--sf-text-soft);
+}
+p:last-child { margin-bottom: 0; }
+
+strong, b { color: var(--sf-text); font-weight: 600; }
+em, i { font-style: italic; }
+small { font-size: var(--sf-text-sm); color: var(--sf-text-muted); }
+
+code, pre, kbd, samp {
+	font-family: var(--sf-font-mono);
+	font-size: 0.9em;
+}
+code {
+	padding: 0.1em 0.4em;
+	background-color: var(--sf-bg-surface);
+	border: 1px solid var(--sf-border);
+	border-radius: var(--sf-radius-sm);
+	color: var(--sf-color-frost);
+}
+pre {
+	padding: var(--sf-space-5);
+	background-color: var(--sf-bg-elevated);
+	border: 1px solid var(--sf-border);
+	border-radius: var(--sf-radius-md);
+	overflow-x: auto;
+	color: var(--sf-text-soft);
+}
+
+/* ----- Links ----- */
+a {
+	color: var(--sf-accent);
+	text-decoration: none;
+	transition: color var(--sf-dur-fast) var(--sf-ease-soft);
+}
+a:hover,
+a:focus-visible {
+	color: var(--sf-color-ghost);
+}
+
+/* ----- Lists ----- */
+ul, ol {
+	margin: 0 0 var(--sf-space-5);
+	padding-left: var(--sf-space-5);
+	color: var(--sf-text-soft);
+}
+li + li {
+	margin-top: var(--sf-space-2);
+}
+
+/* ----- Quotes ----- */
+blockquote {
+	margin: var(--sf-space-6) 0;
+	padding: var(--sf-space-5) var(--sf-space-6);
+	border-left: 2px solid var(--sf-accent);
+	background: var(--sf-color-frost-soft);
+	color: var(--sf-text);
+	font-size: var(--sf-text-md);
+	border-radius: 0 var(--sf-radius-md) var(--sf-radius-md) 0;
+}
+
+/* ----- Media ----- */
+img, svg, video, canvas, audio, iframe, embed, object {
+	display: block;
+	max-width: 100%;
+}
+img, video {
+	height: auto;
+}
+
+figure {
+	margin: 0 0 var(--sf-space-5);
+}
+figcaption {
+	margin-top: var(--sf-space-2);
+	font-size: var(--sf-text-sm);
+	color: var(--sf-text-muted);
+}
+
+/* ----- Forms ----- */
+input, textarea, select, button {
+	font: inherit;
+	color: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+	width: 100%;
+	padding: 0.75rem 1rem;
+	background-color: var(--sf-bg-elevated);
+	border: 1px solid var(--sf-border);
+	border-radius: var(--sf-radius-md);
+	color: var(--sf-text);
+	transition: border-color var(--sf-dur-fast) var(--sf-ease-soft),
+	            box-shadow var(--sf-dur-fast) var(--sf-ease-soft),
+	            background-color var(--sf-dur-fast) var(--sf-ease-soft);
+}
+input::placeholder,
+textarea::placeholder {
+	color: var(--sf-color-eclipse);
+}
+input:focus,
+textarea:focus,
+select:focus {
+	outline: none;
+	border-color: var(--sf-accent);
+	background-color: var(--sf-bg-surface);
+	box-shadow: 0 0 0 3px var(--sf-color-frost-soft);
+}
+
+/* ----- Tables ----- */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 0 0 var(--sf-space-5);
+}
+th, td {
+	padding: var(--sf-space-3) var(--sf-space-4);
+	text-align: left;
+	border-bottom: 1px solid var(--sf-border);
+}
+th {
+	font-family: var(--sf-font-display);
+	font-weight: 600;
+	color: var(--sf-text);
+	font-size: var(--sf-text-sm);
+	text-transform: uppercase;
+	letter-spacing: var(--sf-tracking-wider);
+}
+
+/* ----- Horizontal rule ----- */
+hr {
+	border: 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--sf-border-strong), transparent);
+	margin: var(--sf-space-7) 0;
+}
+
+/* ----- Selection ----- */
+::selection {
+	background-color: var(--sf-color-frost);
+	color: var(--sf-color-void);
+}
+
+/* ----- Focus visible ----- */
+:focus-visible {
+	outline: 2px solid var(--sf-accent);
+	outline-offset: 2px;
+	border-radius: var(--sf-radius-sm);
+}
+
+/* ----- Skip link ----- */
+.skip-link {
+	position: absolute;
+	left: -9999rem;
+	top: var(--sf-space-3);
+	z-index: var(--sf-z-toast);
+	padding: var(--sf-space-3) var(--sf-space-4);
+	background: var(--sf-accent);
+	color: var(--sf-color-void);
+	border-radius: var(--sf-radius-md);
+	font-weight: 600;
+}
+.skip-link:focus {
+	left: var(--sf-space-3);
+}
+
+/* ----- Screen reader only ----- */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+	background-color: var(--sf-bg-surface);
+	border-radius: var(--sf-radius-sm);
+	clip: auto !important;
+	clip-path: none;
+	color: var(--sf-text);
+	display: block;
+	font-size: var(--sf-text-sm);
+	font-weight: 600;
+	height: auto;
+	left: var(--sf-space-3);
+	line-height: normal;
+	padding: var(--sf-space-3) var(--sf-space-4);
+	text-decoration: none;
+	top: var(--sf-space-3);
+	width: auto;
+	z-index: var(--sf-z-toast);
+}
+
+/* Scrollbar — quiet but visible against the void. */
+@supports (scrollbar-width: thin) {
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: var(--sf-border-strong) transparent;
+	}
+}
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: transparent;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--sf-border-strong);
+	border-radius: var(--sf-radius-pill);
+	border: 2px solid var(--sf-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--sf-color-mist);
+}

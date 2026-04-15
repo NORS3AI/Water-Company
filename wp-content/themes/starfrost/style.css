@@ -1,0 +1,30 @@
+/*
+Theme Name:        Starfrost
+Theme URI:         https://starfrost.example/
+Author:            Starfrost
+Author URI:        https://starfrost.example/
+Description:       Starfrost is a modular, void-themed WooCommerce storefront built for Bacteriostatic Water. Pure black canvas, frost-blue accents, and a clean, sleek, modern feel. Designed to work hand-in-hand with WooCommerce and Elementor.
+Version:           1.0.0
+Requires at least: 6.2
+Tested up to:      6.5
+Requires PHP:      7.4
+License:           GNU General Public License v2 or later
+License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:       starfrost
+Domain Path:       /languages
+Tags:              woocommerce, elementor, dark, custom-colors, custom-menu, custom-logo, featured-images, full-width-template, theme-options, threaded-comments, translation-ready
+*/
+
+/*
+ * The actual styles for Starfrost live in /assets/css/.
+ * This file is required by WordPress for theme metadata only.
+ *
+ * Stylesheets enqueued from functions.php / inc/enqueue.php:
+ *   - assets/css/tokens.css       (design tokens / CSS variables)
+ *   - assets/css/base.css         (reset + typography + base elements)
+ *   - assets/css/layout.css       (header, footer, grid, containers)
+ *   - assets/css/components.css   (buttons, cards, forms, badges, drawer)
+ *   - assets/css/woocommerce.css  (shop, product, cart, checkout overrides)
+ *   - assets/css/elementor.css    (Elementor compatibility layer)
+ *   - assets/css/utilities.css    (helper / utility classes)
+ */
